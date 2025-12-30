@@ -1,0 +1,243 @@
+.title-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c62828; /* primary red */
+  margin-left: 1.5rem;
+}
+
+.education {
+  display: flex;
+  justify-content: center;
+}
+
+/* Timeline Container */
+.timeline {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  max-width: 400px;
+}
+
+/* setting padding based on even or odd */
+.card:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.card:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+
+/* Global ::before */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid #c62828; /* red border */
+}
+
+/* Setting the border of top, bottom, left */
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the border of top, bottom, right */
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card and it's odd */
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card and it's even */
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff; /* white card */
+  color: #333; /* dark text */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(198, 40, 40, 0.15); /* subtle red shadow */
+}
+
+/* Title of the card */
+.title {
+  color: var(--primary-color); /* red title */
+  position: relative;
+}
+
+/* Timeline dot */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffffff; /* white center */
+  border-radius: 999px;
+  border: 3px solid var(--primary-color); /* red dot border */
+}
+
+/* text right if the card is even */
+.card:nth-child(even) > .info > .title {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card:nth-child(odd) > .info > .title::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is even */
+.card:nth-child(even) > .info > .title::before {
+  right: -45px;
+}
+
+/* Glassmorphic Card */
+.glass {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  /* box-shadow: 0 8px 30px rgba(198, 40, 40, 0.25); */
+  color: #333;
+}
+
+/* Degree & institute text */
+.degree {
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.institute {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Percentage / GPA badge */
+.score {
+  text-align: center;
+  margin-top: 8px;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(198, 40, 40, 0.15);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.divider>div{
+    width: 100%;
+    margin: 1rem;
+}
+
+.divider{
+    display: flex;
+}
+
+/* Achievements container */
+.achievements {
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 20px;
+  margin-left: 40px;
+}
+
+/* Section titles */
+.section-title {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c62828;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(198, 40, 40, 0.4);
+  padding-bottom: 6px;
+}
+
+/* Individual achievement */
+.achievement-item {
+  margin-bottom: 16px;
+}
+
+.achievement-item h4 {
+  color: #b71c1c;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.achievement-item p {
+    text-align: justify;
+  font-size: 0.85rem;
+  color: #333;
+  opacity: 0.9;
+}
+
+/* Certification list */
+.cert-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cert-list li {
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.cert-list strong {
+  display: inline-block;
+  color: #b71c1c;
+  margin-bottom: 3px;
+}
+
+/* Certification link */
+.cert-link {
+  margin-left: 8px;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #c62828;
+  font-weight: 700;
+}
+
+.cert-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .divider {
+    flex-direction: column;
+  }
+
+  .achievements {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}

@@ -55,7 +55,7 @@
     }
 
     .tech-pill {
-      background: rgba(196, 22, 28, 0.15);
+      background: rgba(196, 22, 28, 0.348);
       color: var(--red);
       padding: 6px 14px;
       border-radius: 999px;
@@ -82,7 +82,7 @@
     }
 
     .github-link:hover {
-      background: #a31216;
+      background: var(--primary-color);
       transform: translateY(-2px);
     }
 
