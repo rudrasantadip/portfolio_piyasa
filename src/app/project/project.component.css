@@ -1,0 +1,195 @@
+.title-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary-color); /* muted gray */
+  margin-left: 1.5rem;
+}
+
+
+ .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .project-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 24px;
+      color: var(--text-dark);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #2a2a2a;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tech-pill {
+      background: rgba(196, 22, 28, 0.15);
+      color: var(--red);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(196, 22, 28, 0.3);
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--red);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .github-link i {
+      font-size: 1.1rem;
+    }
+
+    .github-link:hover {
+      background: #a31216;
+      transform: translateY(-2px);
+    }
+
+    /* -----------------------------
+   Global Responsiveness
+--------------------------------*/
+.projects-container {
+  padding: 1rem;
+}
+
+/* Prevent text & cards from overflowing */
+.project-card {
+  min-width: 0;
+}
+
+/* Fluid typography */
+.project-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+.project-description {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+/* Tech pill scaling */
+.tech-pill {
+  font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+  padding: 6px 12px;
+}
+
+/* Button scaling */
+.github-link {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  padding: 10px 16px;
+}
+
+/* -----------------------------
+   Tablet (<= 900px)
+--------------------------------*/
+@media (max-width: 900px) {
+  .projects-container {
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+}
+
+/* -----------------------------
+   Mobile (<= 600px)
+--------------------------------*/
+@media (max-width: 600px) {
+  .title-text {
+    margin-left: 0.75rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .tech-stack {
+    gap: 8px;
+  }
+
+  .github-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* -----------------------------
+   Small Phones (<= 380px)
+--------------------------------*/
+@media (max-width: 380px) {
+  .project-card {
+    padding: 16px;
+  }
+
+  .tech-pill {
+    padding: 5px 10px;
+  }
+
+  .github-link {
+    padding: 9px 14px;
+  }
+}
+
+/* -----------------------------
+   Large Screens (>= 1200px)
+--------------------------------*/
+@media (min-width: 1200px) {
+  .projects-container {
+    max-width: 1100px;
+    gap: 36px;
+  }
+
+  .project-card {
+    padding: 28px;
+  }
+}
