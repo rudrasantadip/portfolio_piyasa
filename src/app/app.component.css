@@ -1,0 +1,25 @@
+
+mat-toolbar{
+    position: relative;
+    z-index: 5;
+}
+.content{
+    padding: 20px;
+}
+
+mat-sidenav-container{
+    height: calc(100vh);
+}
+
+mat-sidenav, mat-sidenav-content{
+    transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 1025px) {
+    mat-sidenav-container{
+        position: absolute;
+        bottom: 0;
+        height: calc(90vh);
+    }
+}
+

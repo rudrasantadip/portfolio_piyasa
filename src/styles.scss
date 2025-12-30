@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+/* 🔴 Custom RED palette */
+$my-red-palette: (
+  50:  #fef2f2,
+  100: #fee2e2,
+  200: #fecaca,
+  300: #fca5a5,
+  400: #f87171,
+  500: #ef4444,  // MAIN
+  600: #dc2626,
+  700: #b91c1c,
+  800: #991b1b,
+  900: #7f1d1d,
+  contrast: (
+    50:  #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  )
+);
+
+/* Make it usable by Material */
+$primary: mat.define-palette($my-red-palette, 500);
+$accent: mat.define-palette(mat.$deep-orange-palette);
+$warn: mat.define-palette(mat.$red-palette);
+
+/* Create theme */
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  ),
+));
+
+@include mat.all-component-themes($theme);
+
+/* 🔴 Icons */
+.mat-icon {
+  color: mat.get-color-from-palette($primary);
+}
+
+
+html,body{
+   height: 100%;
+   box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Roboto,"Helvetica Nueue", sans-serif;
+    --primary-color:#cc0000;
+    
+}
+
+
+
+@media (min-width: 1025px) {
+  body{
+    overflow-y: hidden;
+  }
+}
