@@ -27,4 +27,22 @@ class="sidenav-header">
         *ngIf="!sideNavCollapsed()"
          matListItemTitle>{{item.label}}</span>
     </a>
+
+    <a 
+    class="menu-item"
+    mat-list-item 
+    routerLinkActive="selected-menu-item"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive"
+    target="_blank"
+    href="/assets/resume.pdf"
+
+    >
+        <mat-icon
+        [fontSet]="rla.isActive?'material-icons':'material-icons-outlined'"
+         matListItemIcon><i class="fa-solid fa-file"></i></mat-icon>
+        <span
+        *ngIf="!sideNavCollapsed()"
+         matListItemTitle>Resume</span>
+    </a>
 </mat-nav-list>
