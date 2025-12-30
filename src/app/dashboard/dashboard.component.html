@@ -51,28 +51,28 @@
                 </div>
 
                 <div class="widgets">
-                    <button class="get-in-touch">Get in Touch</button>
-                    <button class="glass-button">View Projects</button>
+                    <button class="get-in-touch" (click)="redirect('/contact')">Get in Touch</button>
+                    <button class="glass-button" (click)="redirect('/projects')">View Projects</button>
                 </div>
             </div>
 
             <div class="social-bar">
-                <button class="social-btn" aria-label="GitHub">
+                <a class="social-btn" href="https://github.com/Piyasa-24" target="_blank" aria-label="GitHub">
                     <i class="fa-brands fa-github"></i>
                      <span class="tooltip">GitHub</span>
-                </button>
-                <button class="social-btn">
+                </a>
+                <a class="social-btn" href="https://www.linkedin.com/in/piyasa-dey-a261001b6/" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                     <span class="tooltip">Linkedin</span>
-                </button>
-                <button class="social-btn">
+                </a>
+                <a class="social-btn" href="mailto:deypiyasa82@email.com">
                     <i class="fa-solid fa-envelope"></i>
                     <span class="tooltip">Mail</span>
-                </button>
-                <button class="social-btn">
+                </a>
+                <a class="social-btn" href="/assets/resume.pdf" target="_blank">
                     <i class="fa-solid fa-file"></i>
                      <span class="tooltip">Resume</span>
-                </button>
+                </a>
             </div>
 
         </section>
